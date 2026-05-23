@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import { MapPin, Calendar, Heart, Leaf, Map, Send, Compass } from "lucide-react";
+import { MapPin, Heart, Leaf, Map, Send, Compass } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";

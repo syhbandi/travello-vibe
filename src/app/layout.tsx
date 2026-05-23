@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Volkhov } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -29,7 +31,13 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${volkhov.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans bg-white text-foreground">{children}</body>
+      <body className="min-h-full flex flex-col font-sans bg-white text-foreground">
+        <Navbar />
+        <main className="flex-1 w-full bg-white flex flex-col">
+          {children}
+        </main>
+        <Footer />
+      </body>
     </html>
   );
 }
