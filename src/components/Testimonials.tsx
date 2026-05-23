@@ -28,6 +28,7 @@ const testimonials = [
 
 export default function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const cardContainerRef = useRef<HTMLDivElement>(null);
   const isAnimatingRef = useRef(false);
@@ -49,6 +50,7 @@ export default function Testimonials() {
   const animateCardChange = (direction: "next" | "prev", updateState: () => void) => {
     if (isAnimatingRef.current) return;
     isAnimatingRef.current = true;
+    setIsAnimating(true);
 
     const total = testimonials.length;
     const topCardEl = containerRef.current?.querySelector(`.testimonial-card-${activeIndex}`);
@@ -58,6 +60,7 @@ export default function Testimonials() {
     if (!topCardEl || !middleCardEl || !bottomCardEl) {
       updateState();
       isAnimatingRef.current = false;
+      setIsAnimating(false);
       return;
     }
 
@@ -65,6 +68,7 @@ export default function Testimonials() {
       onComplete: () => {
         updateState();
         isAnimatingRef.current = false;
+        setIsAnimating(false);
       }
     });
 
@@ -228,10 +232,12 @@ export default function Testimonials() {
     if (diffX < -100) {
       // Swipe left -> Throw left and move to next
       isAnimatingRef.current = true;
+      setIsAnimating(true);
       const tl = gsap.timeline({
         onComplete: () => {
           setActiveIndex((prev) => (prev + 1) % total);
           isAnimatingRef.current = false;
+          setIsAnimating(false);
         }
       });
 
@@ -279,10 +285,12 @@ export default function Testimonials() {
     } else if (diffX > 100) {
       // Swipe right -> Throw right and move to next
       isAnimatingRef.current = true;
+      setIsAnimating(true);
       const tl = gsap.timeline({
         onComplete: () => {
           setActiveIndex((prev) => (prev + 1) % total);
           isAnimatingRef.current = false;
+          setIsAnimating(false);
         }
       });
 
@@ -330,9 +338,11 @@ export default function Testimonials() {
     } else {
       // Drag distance too small -> Snap back to initial positions
       isAnimatingRef.current = true;
+      setIsAnimating(true);
       const tl = gsap.timeline({
         onComplete: () => {
           isAnimatingRef.current = false;
+          setIsAnimating(false);
         }
       });
 
@@ -498,7 +508,7 @@ export default function Testimonials() {
 
                   {/* Quote Text */}
                   <p className="text-text-gray font-medium text-sm sm:text-base leading-relaxed mt-4 mb-4 italic select-none">
-                    "{test.quote}"
+                    &ldquo;{test.quote}&rdquo;
                   </p>
 
                   {/* Identity */}
@@ -519,7 +529,7 @@ export default function Testimonials() {
           <div className="flex sm:flex-col gap-4 z-20">
             <button
               onClick={prevTestimonial}
-              disabled={isAnimatingRef.current}
+              disabled={isAnimating}
               className="p-4 rounded-full bg-white hover:bg-accent-orange/15 hover:text-accent-orange text-primary-navy shadow-lg border border-gray-100/50 transition-all focus:outline-none cursor-pointer duration-300 hover:scale-105 active:scale-95 disabled:opacity-50"
               aria-label="Previous testimonial"
             >
@@ -528,7 +538,7 @@ export default function Testimonials() {
             </button>
             <button
               onClick={nextTestimonial}
-              disabled={isAnimatingRef.current}
+              disabled={isAnimating}
               className="p-4 rounded-full bg-white hover:bg-accent-orange/15 hover:text-accent-orange text-primary-navy shadow-lg border border-gray-100/50 transition-all focus:outline-none cursor-pointer duration-300 hover:scale-105 active:scale-95 disabled:opacity-50"
               aria-label="Next testimonial"
             >
