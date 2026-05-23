@@ -11,7 +11,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
-  const isDarkHeaderPage = pathname === "/destinations" || pathname === "/packages";
+  const isDarkHeaderPage = pathname === "/destinations" || pathname === "/packages" || pathname === "/booking";
   const isDarkText = !isDarkHeaderPage || isScrolled || isOpen;
 
   useEffect(() => {
@@ -84,7 +84,7 @@ export default function Navbar() {
 
           <div className="flex items-center gap-6">
             <Link
-              href="#login"
+              href="/login"
               className={`font-medium text-sm hover:text-accent-orange transition-colors duration-300 ${
                 isDarkText ? "text-primary-navy" : "text-white"
               }`}
@@ -92,7 +92,7 @@ export default function Navbar() {
               Login
             </Link>
             <Link
-              href="#signup"
+              href="/signup"
               className={`px-5 py-2 text-sm font-medium border rounded-md transition-all duration-300 ${
                 isDarkText
                   ? "border-primary-navy text-primary-navy hover:bg-primary-navy hover:text-white"
@@ -158,14 +158,14 @@ export default function Navbar() {
 
           <div className="flex flex-col gap-4 text-center">
             <Link
-              href="#login"
+              href="/login"
               onClick={() => setIsOpen(false)}
               className="py-2 text-primary-navy font-semibold hover:text-accent-orange transition-colors"
             >
               Login
             </Link>
             <Link
-              href="#signup"
+              href="/signup"
               onClick={() => setIsOpen(false)}
               className="px-5 py-3 text-sm font-semibold border border-primary-navy text-primary-navy rounded-md hover:bg-primary-navy hover:text-white transition-all duration-300"
             >
