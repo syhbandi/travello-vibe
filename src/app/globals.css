@@ -10,7 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-volkhov), Georgia, Cambria, "Times New Roman", Times, serif;
-  
+
   --color-primary-navy: #181E4B;
   --color-accent-orange: #DF6951;
   --color-accent-yellow: #F1A501;
@@ -29,9 +29,11 @@ body {
   0% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
+
   100% {
     transform: translateY(0px);
   }
@@ -45,9 +47,11 @@ body {
   0% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-8px);
   }
+
   100% {
     transform: translateY(0px);
   }
@@ -73,3 +77,12 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-none {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

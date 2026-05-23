@@ -183,7 +183,7 @@ export default function PackagesClient() {
         />
         {/* Deeper, Richer, and more dramatic Dark-to-White Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#102a43]/95 via-primary-navy/75 via-primary-navy/35 to-white" />
-        
+
         {/* Plus pattern grid behind */}
         <div className="absolute right-[5%] top-[15%] w-[90px] h-[90px] opacity-15 pointer-events-none select-none">
           <Image
@@ -200,12 +200,12 @@ export default function PackagesClient() {
           <span className="text-accent-orange uppercase font-black tracking-widest text-xs sm:text-sm mb-3">
             Premium Adventures
           </span>
-          
+
           <h1 className="pkg-hero-title font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-4 relative">
             Our Premium Tour Packages
             <div className="absolute left-1/2 -bottom-2 transform -translate-x-1/2 w-28 h-[4px] bg-accent-yellow rounded-full" />
           </h1>
-          
+
           <p className="pkg-hero-desc text-white/90 text-sm sm:text-base md:text-lg max-w-2xl font-medium mt-6">
             Handpicked experiences designed to show you Lombok at its absolute best. All packages are fully inclusive with premium accommodation, expert guides, and private transport.
           </p>
@@ -262,10 +262,10 @@ export default function PackagesClient() {
                       sizes="(max-width: 768px) 100vw, 400px"
                       className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                     />
-                    
+
                     {/* Overlay gradient */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
-                    
+
                     {/* Badge */}
                     <span className={`absolute top-5 right-5 px-4 py-1.5 rounded-full text-3xs font-black tracking-wider ${pkg.badgeColor} shadow-md uppercase`}>
                       {pkg.badge}
@@ -296,14 +296,14 @@ export default function PackagesClient() {
                       <span className="text-text-gray font-semibold text-3xs">({pkg.reviews})</span>
                     </div>
 
-                    {/* Facilities Grid Icons */}
-                    <div className="grid grid-cols-4 gap-2 py-3 px-4 bg-gray-50 rounded-2xl mb-6 text-center border border-gray-100">
+                    {/* Facilities Horizontal Scrollable Row */}
+                    <div className="flex items-center gap-3 overflow-x-auto py-3 px-4 bg-gray-50 rounded-2xl mb-6 border border-gray-100 scrollbar-none justify-between sm:justify-around">
                       {pkg.facilities.map((fac, fIdx) => {
                         const Icon = fac.icon;
                         return (
-                          <div key={fIdx} className="flex flex-col items-center gap-1">
+                          <div key={fIdx} className="flex flex-col items-center gap-1 shrink-0 min-w-[55px] text-center">
                             <Icon className="w-4 h-4 text-primary-navy/80" />
-                            <span className="text-gray-400 font-bold text-4xs uppercase tracking-wider">{fac.label}</span>
+                            <span className="text-gray-400 font-bold text-4xs uppercase tracking-wider block whitespace-nowrap">{fac.label}</span>
                           </div>
                         );
                       })}
@@ -331,7 +331,7 @@ export default function PackagesClient() {
                           {pkg.price} <span className="text-3xs font-bold text-text-gray">/ pax</span>
                         </span>
                       </div>
-                      
+
                       <button className="px-5 py-3 bg-primary-navy text-white text-xs font-bold rounded-2xl hover:bg-accent-orange shadow-md hover:shadow-lg transition-all duration-300 flex items-center gap-1.5 group/btn cursor-pointer">
                         Book Tour
                         <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
