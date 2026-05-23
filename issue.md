@@ -1,32 +1,28 @@
-# Feature: Booking, Login, and Sign Up Pages
+# Dokumentasi: Pembaruan README.md
 
 ## Deskripsi
-Issue ini dibuat untuk melacak pengembangan halaman **Booking**, **Login**, dan **Sign Up** untuk aplikasi Travello. Halaman-halaman ini harus mengikuti standar desain visual premium yang sudah ada, menggunakan GSAP untuk animasi, serta memastikan desain responsif dan memiliki kontras (aksesibilitas) yang baik.
+Issue ini dibuat untuk melacak pembaruan dokumentasi proyek, khususnya pada file `README.md`. Tujuannya adalah agar *programmer* atau kontributor lain dapat dengan mudah memahami, menginstal, dan melanjutkan pengembangan proyek Travello ini.
 
 ## Checklist Tugas
 
-### 1. Login Page (`/login`)
-- [ ] Implementasi form untuk autentikasi pengguna (Email & Password).
-- [ ] Tambahkan tautan "Lupa Kata Sandi" (Forgot Password).
-- [ ] Tambahkan tautan untuk menuju ke halaman pendaftaran (Sign Up).
-- [ ] Terapkan desain UI premium dengan transisi dan animasi menggunakan GSAP.
+### 1. Informasi Umum Proyek
+- [ ] Tambahkan deskripsi singkat tentang proyek Travello (aplikasi pemesanan travel dengan desain premium).
+- [ ] Sebutkan *tech stack* utama yang digunakan (Next.js 16 App Router, Tailwind CSS v4, GSAP, TypeScript).
 
-### 2. Sign Up Page (`/signup` atau `/register`)
-- [ ] Implementasi form pendaftaran pengguna baru (Nama, Email, Kata Sandi, Konfirmasi Kata Sandi).
-- [ ] Tambahkan opsi pendaftaran menggunakan pihak ketiga (opsional: Google/Facebook).
-- [ ] Tambahkan tautan untuk menuju ke halaman Login jika sudah punya akun.
-- [ ] Terapkan animasi masuk (entrance animations) dengan GSAP.
+### 2. Panduan Instalasi dan Menjalankan Proyek
+- [ ] Tuliskan langkah-langkah *clone* repositori.
+- [ ] Tuliskan perintah untuk instalasi dependensi (`npm install`).
+- [ ] Tuliskan perintah untuk menjalankan server pengembangan (`npm run dev`).
+- [ ] Tuliskan perintah untuk *build* proyek (`npm run build`).
 
-### 3. Booking Page (`/booking`)
-- [ ] Buat antarmuka form pemesanan (Booking form/flow).
-- [ ] Integrasikan dengan detail destinasi atau paket wisata yang dipilih.
-- [ ] Pastikan jarak antara header dan konten utama diatur dengan baik (menyesuaikan gaya transparan/gradient pada navbar).
-- [ ] Validasi form pemesanan dengan baik sebelum data dikirim.
+### 3. Struktur Direktori dan Arsitektur
+- [ ] Jelaskan secara singkat struktur folder utama (misalnya `/src/app`, `/src/components`).
+- [ ] Berikan penjelasan tentang komponen *client-side* vs *server-side* yang diterapkan di proyek ini.
 
-### 4. Integrasi Navigasi & Navbar
-- [ ] Pastikan tombol login/sign up di Navbar mengarah ke rute yang benar.
-- [ ] Sesuaikan logika warna teks navbar jika halaman ini menggunakan background terang atau gelap pada area Hero/Header.
+### 4. Panduan Desain (Opsional tapi Direkomendasikan)
+- [ ] Jelaskan skema warna utama (primary-navy, accent-orange, dll) dan penggunaan Tailwind config.
+- [ ] Sebutkan panduan penggunaan animasi GSAP yang konsisten di seluruh halaman (misalnya `useGSAP` dan `ScrollTrigger`).
 
 ## Catatan Tambahan
-- Pertahankan penggunaan Tailwind CSS dan konsistensi warna (primary-navy, gradient, dll).
-- Pastikan form tidak tertutup oleh navbar pada perangkat mobile.
+- Pastikan format penulisan `README.md` rapi menggunakan Markdown standar.
+- Tambahkan screenshot antarmuka (Hero, Destinations, dll) jika memungkinkan untuk memberikan gambaran visual yang menarik.
