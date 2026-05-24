@@ -33,11 +33,9 @@ export default function RootLayout({
       className={`${inter.variable} ${volkhov.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans bg-white text-foreground">
-        <Navbar />
         <main className="flex-1 w-full bg-white flex flex-col">
           {children}
         </main>
-        <Footer />
         <Analytics />
       </body>
     </html>
