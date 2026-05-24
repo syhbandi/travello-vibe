@@ -14,7 +14,7 @@ export default function LoginClient() {
     email: "",
     password: "",
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -53,14 +53,14 @@ export default function LoginClient() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.email || !formData.password) return;
-    
+
     setIsSubmitting(true);
-    
+
     // Simulate login API call
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
-      
+
       // Redirect to dashboard after a short delay so the success animation is visible
       setTimeout(() => {
         router.push("/dashboard");
@@ -75,7 +75,7 @@ export default function LoginClient() {
       <div className="absolute left-[-5%] bottom-[10%] w-[350px] h-[350px] bg-blue-100/20 rounded-full blur-[70px] pointer-events-none -z-10" />
 
       <div className="max-w-6xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 flex-grow">
-        
+
         {/* Left Column: Premium Image Visual */}
         <div ref={imageColRef} className="hidden lg:flex flex-col gap-6 relative h-[600px] w-full rounded-[32px] overflow-hidden shadow-2xl">
           <Image
@@ -87,7 +87,7 @@ export default function LoginClient() {
           />
           {/* Overlay gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-primary-navy/90 via-primary-navy/40 to-transparent" />
-          
+
           <div className="absolute bottom-0 left-0 w-full p-10 flex flex-col gap-3">
             <h2 className="text-white font-serif text-4xl font-bold leading-tight">
               Welcome Back to<br />Your Next Adventure
@@ -101,7 +101,7 @@ export default function LoginClient() {
         {/* Right Column: Form Card */}
         <div ref={formCardRef} className="w-full max-w-md mx-auto lg:mx-0">
           <div className="bg-white rounded-[32px] p-8 sm:p-10 border border-gray-100 shadow-xl sm:shadow-2xl relative overflow-hidden flex flex-col">
-            
+
             {isSuccess ? (
               <div className="py-12 px-4 flex flex-col items-center text-center animate-float">
                 <div className="w-20 h-20 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center shadow-inner border border-emerald-100 mb-6">
