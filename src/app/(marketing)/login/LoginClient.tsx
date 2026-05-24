@@ -3,11 +3,13 @@
 import { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Mail, Lock, LogIn, CheckCircle } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 export default function LoginClient() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -58,7 +60,11 @@ export default function LoginClient() {
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
-      // In a real app, you would redirect here
+      
+      // Redirect to dashboard after a short delay so the success animation is visible
+      setTimeout(() => {
+        router.push("/dashboard");
+      }, 1000);
     }, 1500);
   };
 
