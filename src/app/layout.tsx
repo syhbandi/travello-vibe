@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Volkhov } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -30,7 +33,12 @@ export default function RootLayout({
       className={`${inter.variable} ${volkhov.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans bg-white text-foreground">
-        {children}
+        <Navbar />
+        <main className="flex-1 w-full bg-white flex flex-col">
+          {children}
+        </main>
+        <Footer />
+        <Analytics />
       </body>
     </html>
   );
